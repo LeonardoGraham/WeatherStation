@@ -1,6 +1,8 @@
+namespace WeatherStation;
+
 public interface ISubject
 {
-    public void registerObserver(Observer o);
-    public void removeObserver(Observer o);
-    public void notifyObserver();
+    public void RegisterObserver(IObserver observer);
+    public void RemoveObserver(IObserver observer);
+    public void NotifyObservers();
 }

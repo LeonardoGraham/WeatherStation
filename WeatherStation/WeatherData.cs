@@ -1,4 +1,4 @@
-using WeatherStation;
+namespace WeatherStation;
 
 public class WeatherData : ISubject
 {

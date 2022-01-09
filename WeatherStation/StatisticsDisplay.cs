@@ -2,11 +2,11 @@
 
 public class StatisticsDisplay : IObserver, IDisplayElement
 {
-    private float _maxTemp = 0.0f;
+    private float _maxTemp;
     private float _minTemp = 200;
-    private float _tempSum = 0.0f;
+    private float _tempSum;
     private int _numReadings;
-    private WeatherData _weatherData;
+    private readonly WeatherData _weatherData;
 
     public StatisticsDisplay(WeatherData weatherData)
     {

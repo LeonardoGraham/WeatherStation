@@ -4,7 +4,7 @@ using WeatherStation;
 
 var weatherData = new WeatherData();
 
-var currentDisplay = new CurrentConditionsDisplay(weatherData);
+var currentConditionsDisplay = new CurrentConditionsDisplay(weatherData);
 var statisticsDisplay = new StatisticsDisplay(weatherData);
 var forecastDisplay = new ForecastDisplay(weatherData);
 var heatIndexDisplay = new HeatIndexDisplay(weatherData);

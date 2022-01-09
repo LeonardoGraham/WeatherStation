@@ -1,4 +1,4 @@
-﻿using WeatherStation;
+﻿namespace WeatherStation;
 
 public class ForecastDisplay : IObserver, IDisplayElement
 {
@@ -14,9 +14,8 @@ public class ForecastDisplay : IObserver, IDisplayElement
 
     public void Update()
     {
-        var pressure = _weatherData.Pressure;
         _lastPressure = _currentPressure;
-        _currentPressure = pressure;
+        _currentPressure = _weatherData.Pressure;
         
         Display();
     }

@@ -1,9 +1,7 @@
-using WeatherStation;
+namespace WeatherStation;
 
 public class HeatIndexDisplay : IObserver, IDisplayElement
 {
-    private float _temperature;
-    private float _humidity;
     private float _heatIndex;
     private readonly WeatherData _weatherData;
     public HeatIndexDisplay(WeatherData weatherData)
@@ -24,9 +22,9 @@ public class HeatIndexDisplay : IObserver, IDisplayElement
                             (0.0000000000481975 * (t * t * t * rh * rh * rh)));
         return index;
     }
-    public void Update(float temperature, float humidity, float pressure)
+    public void Update(float temp, float humidity, float pressure)
     {
-        _heatIndex = ComputeHeatIndex(temperature, humidity);
+        _heatIndex = ComputeHeatIndex(temp, humidity);
         Display();
     }
 

@@ -3,9 +3,9 @@ using WeatherStation;
 public class WeatherData : ISubject
 {
     private readonly List<IObserver> _observers;
-    private float _temperature;
-    private float _humidity;
-    private float _pressure;
+    public float Temperature { get; private set; }
+    public float Humidity { get; private set; }
+    public float Pressure { get; private set; }
 
     public WeatherData()
     {
@@ -26,7 +26,7 @@ public class WeatherData : ISubject
     {
         foreach (var observer in _observers)
         {
-            observer.Update(_temperature, _humidity, _pressure);
+            observer.Update();
         }
     }
 
@@ -37,9 +37,9 @@ public class WeatherData : ISubject
 
     public void SetMeasurements(float temperature, float humidity, float pressure)
     {
-        _temperature = temperature;
-        _humidity = humidity;
-        _pressure = pressure;
+        Temperature = temperature;
+        Humidity = humidity;
+        Pressure = pressure;
         MeasurementsChanged();
     }
 }

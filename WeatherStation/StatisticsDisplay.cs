@@ -14,19 +14,20 @@ public class StatisticsDisplay : IObserver, IDisplayElement
         _weatherData.RegisterObserver(this);
     }
 
-    public void Update(float temp, float humidity, float pressure)
+    public void Update()
     {
-        _tempSum += temp;
+        var temperature = _weatherData.Temperature;
+        _tempSum += temperature;
         _numReadings++;
 
-        if (temp > _maxTemp)
+        if (temperature > _maxTemp)
         {
-            _maxTemp = temp;
+            _maxTemp = temperature;
         }
 
-        if (temp < _minTemp)
+        if (temperature < _minTemp)
         {
-            _minTemp = temp;
+            _minTemp = temperature;
         }
         
         Display();

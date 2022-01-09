@@ -12,8 +12,9 @@ public class ForecastDisplay : IObserver, IDisplayElement
         _weatherData.RegisterObserver(this);
     }
 
-    public void Update(float temp, float humidity, float pressure)
+    public void Update()
     {
+        var pressure = _weatherData.Pressure;
         _lastPressure = _currentPressure;
         _currentPressure = pressure;
         

@@ -22,9 +22,11 @@ public class HeatIndexDisplay : IObserver, IDisplayElement
                             (0.0000000000481975 * (t * t * t * rh * rh * rh)));
         return index;
     }
-    public void Update(float temp, float humidity, float pressure)
+    public void Update()
     {
-        _heatIndex = ComputeHeatIndex(temp, humidity);
+        var temperature = _weatherData.Temperature;
+        var humidity = _weatherData.Humidity;
+        _heatIndex = ComputeHeatIndex(temperature, humidity);
         Display();
     }
 

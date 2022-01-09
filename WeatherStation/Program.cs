@@ -7,6 +7,7 @@ var weatherData = new WeatherData();
 var currentDisplay = new CurrentConditionsDisplay(weatherData);
 var statisticsDisplay = new StatisticsDisplay(weatherData);
 var forecastDisplay = new ForecastDisplay(weatherData);
+var heatIndexDisplay = new HeatIndexDisplay(weatherData);
 
 
 weatherData.SetMeasurements(80, 65,30.4f);
